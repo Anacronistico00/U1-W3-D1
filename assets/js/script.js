@@ -119,7 +119,7 @@ console.log('----------Esercizio 8----------');
 
 function extractOdd() {
   const numbers = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 1; i < 100; i++) {
     numbers.push(i);
   }
 
@@ -253,6 +253,18 @@ const movies = [
 /* ESERCIZIO 9 (forEach)
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
+
+function oldestFilm(movies) {
+  let oldestMovie = movies[0];
+  movies.forEach((element) => {
+    if (parseInt(element.Year) < parseInt(oldestMovie.Year)) {
+      oldestMovie = element;
+    }
+  });
+  return oldestMovie;
+}
+
+console.log(oldestFilm(movies));
 
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
