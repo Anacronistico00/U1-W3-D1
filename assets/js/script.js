@@ -254,6 +254,8 @@ const movies = [
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
 
+console.log('----------Esercizio 9----------');
+
 function oldestFilm(movies) {
   let oldestMovie = movies[0];
   movies.forEach((element) => {
@@ -270,22 +272,86 @@ console.log(oldestFilm(movies));
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
 
+console.log('----------Esercizio 10----------');
+
+function moviesCount(movies) {
+  return movies.length;
+}
+
+console.log(moviesCount(movies));
+
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
+
+console.log('----------Esercizio 11----------');
+
+function moviesTitle(movies) {
+  const Titles = movies.map((element) => element.Title);
+  return Titles;
+}
+
+console.log(moviesTitle(movies));
 
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
 
+console.log('----------Esercizio 12----------');
+
+function currentMillenium(movies) {
+  const newMovies = movies.filter((element) => parseInt(element.Year) > 2000);
+  return newMovies;
+}
+
+console.log(currentMillenium(movies));
+
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
+
+console.log('----------Esercizio 13----------');
+
+function yearsSum(movies) {
+  const sum = movies.reduce((element, movie) => {
+    const year = parseInt(movie.Year);
+    let yearSum = element + year;
+    return yearSum;
+  }, 0);
+  return sum;
+}
+
+console.log(yearsSum(movies));
 
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
 
+console.log('----------Esercizio 14----------');
+
+const imdbID = 'tt0077869';
+
+function findFIlm(movies, imdbID) {
+  const finder = movies.find((movie) => movie.imdbID === imdbID);
+  return finder;
+}
+
+console.log(findFIlm(movies, imdbID));
+
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
+
+console.log('----------Esercizio 15----------');
+
+const releaseYear = 2003;
+
+function findByIndex(movies, releaseYear) {
+  const indexYear = movies.findIndex(
+    (movie) => parseInt(movie.Year) === releaseYear
+  );
+  return indexYear;
+}
+console.log(findByIndex(movies, releaseYear));
+
+console.log(movies[findByIndex(movies, releaseYear)]);
