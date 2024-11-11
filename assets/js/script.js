@@ -105,12 +105,34 @@ console.log('----------Esercizio 7----------');
 const stringArray = ['Vittorio', 'EPICODE', '2024'];
 
 function newStringArray(stringArray) {
-  const newStringArray = stringArray.map();
+  const newStringArray = stringArray.map((element) => element.length);
+  return newStringArray;
 }
+console.log(stringArray);
+console.log(newStringArray(stringArray));
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
+
+console.log('----------Esercizio 8----------');
+
+function extractOdd() {
+  const numbers = [];
+  for (let i = 0; i < 100; i++) {
+    numbers.push(i);
+  }
+
+  const odd = [];
+  numbers.forEach((num) => {
+    if (num % 2 !== 0) {
+      odd.push(num);
+    }
+  });
+  return odd;
+}
+
+console.log(extractOdd());
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
